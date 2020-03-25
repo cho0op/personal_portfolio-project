@@ -5,12 +5,16 @@
     <title>Title</title>
 </head>
 <body>
+<h2>Blog</h2>
 
 {% for article in articles %}
-
-<h2>{{ articles.title }}</h2>
-<p>{{ articles.date }}</p>
-
+<div style="border:2px solid red; width: 500px">
+<h2>{{ article.title }}</h2>
+<p>{{ article.date }}</p>
+<p>{{article.text}}</p>
+</div>
 {% endfor %}
+
+
 </body>
 </html>

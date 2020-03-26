@@ -6,12 +6,15 @@
 </head>
 <body>
 <h2>Blog</h2>
+<h2>there are {{ articles.count }} article{{ articles.count|pluralize }}</h2>
 
 {% for article in articles %}
-<div style="border:2px solid red; width: 500px">
-<h2>{{ article.title }}</h2>
-<p>{{ article.date }}</p>
-<p>{{article.text}}</p>
+    <div style="border:2px solid red; width: 500px">
+    <a href="{% url 'blog:detail' article.id %}">
+        <h2>{{ article.title }}</h2>
+    </a>
+    <p>{{ article.date|date:'M d Y '}}</p>
+    <p>{{article.text}}</p>
 </div>
 {% endfor %}
 

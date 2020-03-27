@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
+{% extends 'portfolio/nav.html' %}
+{% block navigation_bar %}
+
 <h2>this is home page</h2>
-<a href="{% url blog: all_blogs %}"><h2>My blog</h2></a>
+<a href="{% url 'blog:all_blogs' %}"><h2>My blog</h2></a>
 {% load static %}
 
 <img src="{% static 'portfolio/kek.jpg' %}" style="width: 200px; height:300px">
@@ -15,5 +19,6 @@
     <p>{{ project.discription }}</p>
     <img src="{{ project.image.url }}" alt="pic">
 {% endfor %}
+{% endblock %}
 </body>
 </html>

@@ -1,18 +1,17 @@
 <!DOCTYPE html>
+{% extends 'portfolio/nav.html' %}
+{% block navigation_bar %}
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/png" href="{% static 'portfolio/my_logo.png' %}" >
 </head>
 <body>
-{% extends 'portfolio/nav.html' %}
-{% block navigation_bar %}
-
 <h2>this is home page</h2>
 <a href="{% url 'blog:all_blogs' %}"><h2>My blog</h2></a>
-{% load static %}
-
 <img src="{% static 'portfolio/kek.jpg' %}" style="width: 200px; height:300px">
 {% for project in projects %}
     <h2>{{ project.title }}</h2>
